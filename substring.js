@@ -30,9 +30,12 @@ function getSubstringMaxLengthWithoutRepeating(value) {
     }
   }
 
-  return maxLengthWithoutRepeating;
+  return maxLengthWithoutRepeating === 0
+    ? uniqueChars.length
+    : maxLengthWithoutRepeating;
 }
 
 assert.equal(getSubstringMaxLengthWithoutRepeating("ABDEFGABEF"), 6);
 assert.equal(getSubstringMaxLengthWithoutRepeating("BBBB"), 1);
 assert.equal(getSubstringMaxLengthWithoutRepeating("GEEKSFORGEEKS"), 7);
+assert.equal(getSubstringMaxLengthWithoutRepeating("ABC"), 3);
